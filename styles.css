@@ -53,8 +53,8 @@ h1{
   background:var(--pink);border-bottom:4px solid var(--ink);
   padding:8px 12px;font-weight:bold;text-transform:uppercase;
 }
-#cv{
-  padding:8px 12px;
+#cv p,h2{
+  padding:8px 10px;
 }
 .content{padding:18px}
 h2,h3{margin-top:0}
