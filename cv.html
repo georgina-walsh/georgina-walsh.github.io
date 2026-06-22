@@ -136,6 +136,17 @@
       display:grid;
       grid-template-columns:1fr 2fr;
       gap:9mm;
+      align-items: stretch;
+    }
+
+    aside{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    aside .panel:last-child{
+      flex: 1;
     }
 
     .panel{
@@ -170,11 +181,11 @@
       white-space:nowrap;
     }
 
-    .panel-body{padding:8px 10px; font-size:8.7pt;}
+    .panel-body{padding:8px 10px; font-size:13pt;}
     .panel-body p{margin:0 0 7px;}
 
     h2,h3{margin:0;}
-    h3{font-size:10pt; line-height:1.25;}
+    h3{font-size:15pt; line-height:1.25;}
 
     .meta{
       display:block;
@@ -234,6 +245,10 @@
       padding:5px 8px;
       text-align:center;
       text-decoration:none;
+    }
+
+    .footer-strip .download{
+      background:var(--cyan);
     }
 
     @media print{
@@ -303,8 +318,9 @@
           <section class="panel pink">
             <div class="panel-title"><span>% certifications</span><span class="window">— □</span></div>
             <div class="panel-body">
-              <p><strong>EDx / Harvard CS50X:</strong> Intro to Computer Science</p>
-              <p><strong>EDx / Harvard CS50P:</strong> Intro to Python</p>
+              <p><strong>EDx / Harvard CS50X:</strong> Introduction to Computer Science</p>
+              <p><strong>EDx / Harvard CS50P:</strong> Introduction to Python</p>
+              <p><strong>EDx / Harvard CS50AI:</strong> Introduction to AI</p>
             </div>
           </section>
 
@@ -374,7 +390,7 @@
 
     <footer class="footer-strip">
       <a href="index.html">View Portfolio &gt;</a>
-      <span>Download CV</span>
+      <a href="#" class="download">...Download CV...</a>
       <span>References available upon request</span>
     </footer>
   </main>
