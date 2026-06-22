@@ -1,96 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV | Georgina Melling</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Georgina Melling | CV</title>
+  <style>
+    :root{
+      --bg:#14001f;
+      --pink:#ff3cac;
+      --cyan:#00f5ff;
+      --yellow:#fff000;
+      --lime:#52ff00;
+      --ink:#050008;
+      --paper:#fff6d6;
+      --white:#ffffff;
+      --soft:#f7f7f7;
+    }
+
+    *{box-sizing:border-box;}
+
+    html{scroll-behavior:smooth;}
+
+    body{
+      margin:0;
+      background:var(--soft);
+      color:var(--ink);
+      font-family:"Courier New", Courier, monospace;
+      line-height:1.35;
+    }
+
+    .toolbar{
+      max-width:210mm;
+      margin:18px auto 10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:0 10px;
+      font-size:0.9rem;
+    }
+
+    .toolbar a,
+    .print-btn{
+      color:var(--ink);
+      background:var(--yellow);
+      border:3px solid var(--ink);
+      box-shadow:4px 4px 0 var(--cyan);
+      text-decoration:none;
+      padding:8px 11px;
+      font-family:inherit;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .page{
+      width:100%;
+      min-height:100vh;
+      margin:0;
+      background:var(--white);
+      border:4px solid var(--ink);
+      box-shadow:12px 12px 0 var(--pink);
+      position:relative;
+      overflow:hidden;
+      box-sizing: border-box;
+    }
+
+    .page:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(#05000808 1px, transparent 1px),
+        linear-gradient(90deg,#05000808 1px, transparent 1px);
+      background-size:24px 24px;
+      opacity:.45;
+    }
+
+    .cv{
+      position:relative;
+      z-index:1;
+      padding:15mm 16mm 13mm;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:end;
+      padding:12mm;
+      background:var(--yellow);
+      border:4px solid var(--ink);
+      box-shadow:8px 8px 0 var(--cyan);
+      margin-bottom:10mm;
+    }
+
+    .kicker{
+      margin:0 0 4px;
+      font-size:10pt;
+      font-weight:bold;
+      letter-spacing:.02em;
+    }
+
+    h1{
+      margin:0;
+      font-size:36pt;
+      line-height:.9;
+      letter-spacing:-.07em;
+      text-transform:uppercase;
+      color:var(--ink);
+      text-shadow:3px 3px 0 var(--pink), 6px 6px 0 var(--cyan);
+    }
+
+    .role{
+      margin:7px 0 0;
+      font-size:12pt;
+      font-weight:bold;
+    }
+
+    .intro{
+      margin:7px 0 0;
+      max-width:118mm;
+      font-size:9.3pt;
+    }
+
+    .contact{
+      text-align:right;
+      font-size:8.6pt;
+      font-weight:bold;
+      line-height:1.6;
+    }
+
+    .contact a{color:var(--ink); text-decoration-thickness:2px; text-decoration-color:var(--pink);}
+
+    .layout{
+      display:grid;
+      grid-template-columns:61mm 1fr;
+      gap:9mm;
+    }
+
+    .panel{
+      background:var(--white);
+      border:3px solid var(--ink);
+      box-shadow:6px 6px 0 var(--cyan);
+      margin-bottom:7mm;
+      break-inside:avoid;
+    }
+
+    .panel.pink{box-shadow:6px 6px 0 var(--pink);}
+    .panel.lime{box-shadow:6px 6px 0 var(--lime);}
+
+    .panel-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      background:var(--paper);
+      border-bottom:3px solid var(--ink);
+      padding:5px 8px;
+      font-size:18pt;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.05em;
+      text-transform:lowercase;
+    }
+
+    .panel-title .window{
+      font-size:13pt;
+      letter-spacing:0;
+      white-space:nowrap;
+    }
+
+    .panel-body{padding:8px 10px; font-size:8.7pt;}
+    .panel-body p{margin:0 0 7px;}
+
+    h2,h3{margin:0;}
+    h3{font-size:10pt; line-height:1.25;}
+
+    .meta{
+      display:block;
+      color:var(--pink);
+      font-weight:bold;
+      font-style:italic;
+      margin:1px 0 5px;
+    }
+
+    .item{margin-bottom:8px; break-inside:avoid;}
+    .item:last-child{margin-bottom:0;}
+
+    ul{
+      margin:4px 0 0 0;
+      padding:0;
+      list-style:none;
+    }
+
+    li{margin:1px 0;}
+    li:before{content:"- "; font-weight:bold;}
+
+    .tags{display:flex; flex-wrap:wrap; gap:4px;}
+    .tag{
+      display:inline-block;
+      background:var(--lime);
+      color:var(--ink);
+      padding:3px 6px;
+      border:2px solid var(--ink);
+      font-size:7.8pt;
+      font-weight:bold;
+      line-height:1;
+    }
+
+    .project-number{color:var(--pink); font-weight:bold;}
+
+    .footer-strip{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:8px;
+      padding:8px 16mm;
+      background:var(--yellow);
+      border-top:4px solid var(--ink);
+      font-size:8.7pt;
+      font-weight:bold;
+      z-index:2;
+    }
+
+    .footer-strip span,
+    .footer-strip a{
+      border:3px solid var(--ink);
+      background:var(--paper);
+      color:var(--ink);
+      padding:5px 8px;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    .accent-bar{
+      height:12px;
+      border:3px solid var(--ink);
+      background:repeating-linear-gradient(90deg,var(--cyan) 0 7px, var(--white) 7px 12px, var(--pink) 12px 19px, var(--white) 19px 24px);
+      margin-bottom:7mm;
+    }
+
+    @media print{
+      body{background:white;}
+      .toolbar{display:none;}
+      .page{
+        margin:0;
+        width:210mm;
+        min-height:297mm;
+        border:0;
+        box-shadow:none;
+      }
+      @page{size:A4; margin:0;}
+    }
+
+    @media (max-width:760px){
+      .page{width:100%; min-height:auto; border-left:0; border-right:0;}
+      .cv{padding:20px;}
+      .hero{grid-template-columns:1fr; padding:18px;}
+      .contact{text-align:left;}
+      .layout{grid-template-columns:1fr;}
+      .footer-strip{position:static; grid-template-columns:1fr; padding:10px 20px;}
+    }
+  </style>
 </head>
+<body>
 
-<body class="cv-body">
-  <main class="cv-page">
-    <header class="cv-header">
-      <div>
-        <p class="kicker">&gt; curriculum vitae</p>
-        <h1>GEORGINA<br>MELLING</h1>
-        <p>Software Engineer / AI MSc Student</p>
-      </div>
+  <main class="page" aria-label="Georgina Melling CV">
+    <div class="cv">
+      <header class="hero">
+        <div>
+          <p class="kicker">&gt; curriculum vitae...</p>
+          <h1>Georgina<br>Melling</h1>
+          <p class="role">software engineer / maker / problem solver</p>
+          <p class="intro">Final-year MSc Computer Science with Artificial Intelligence student at the University of York, interested in software engineering, cloud infrastructure and DevOps for deploying scalable, reliable AI systems.</p>
+        </div>
+        <address class="contact">
+          <a href="mailto:georginamelling@outlook.com">georginamelling@outlook.com</a><br>
+          <a href="https://github.com/g-melling">github.com/g-melling</a><br>
+          <a href="#">LinkedIn</a><br>
+          United Kingdom
+        </address>
+      </header>
 
-      <div class="cv-contact">
-        <p>georginamelling@outlook.com</p>
-        <p>github.com/g-melling</p>
-        <p>LinkedIn URL here</p>
-      </div>
-    </header>
+      <div class="accent-bar" aria-hidden="true"></div>
 
-    <section class="cv-profile">
-      <h2>Profile</h2>
-      <p>
-        Final-year MSc Computer Science with Artificial Intelligence student at the University of York,
-        with a strong interest in Software Engineering, Cloud Infrastructure, DevOps, and building
-        reliable, scalable AI systems.
-      </p>
-    </section>
+      <section class="layout">
+        <aside>
+          <section class="panel lime">
+            <div class="panel-title"><span>% skills</span><span class="window">— □</span></div>
+            <div class="panel-body">
+              <p><strong>Programming & Web</strong></p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">React</span>
+              </div>
+              <p style="margin-top:9px"><strong>Data & AI</strong></p>
+              <div class="tags">
+                <span class="tag">Numpy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">SQLite</span>
+              </div>
+              <p style="margin-top:9px"><strong>Tools & Practice</strong></p>
+              <div class="tags">
+                <span class="tag">GitHub</span><span class="tag">Tkinter</span><span class="tag">Bootstrap</span><span class="tag">DevOps</span><span class="tag">Cloud</span>
+              </div>
+            </div>
+          </section>
 
-    <div class="cv-grid">
-      <aside class="cv-sidebar">
+          <section class="panel pink">
+            <div class="panel-title"><span>% profile</span><span class="window">— □</span></div>
+            <div class="panel-body">
+              <p>Software engineering focused MSc student with experience building data-led applications, analytics dashboards and web projects.</p>
+              <p>Motivated by practical problem solving, readable code, thoughtful design and systems that are reliable for real users.</p>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title"><span>% current</span><span class="window">— □</span></div>
+            <div class="panel-body">
+              <p><strong>Volunteer Mentor</strong><br>CodeClub</p>
+              <p>Supporting young learners with coding concepts, creative problem solving and confidence in technology.</p>
+            </div>
+          </section>
+        </aside>
+
         <section>
-          <h2>Education</h2>
-          <p><strong>MSc Computer Science with Artificial Intelligence</strong></p>
-          <p>University of York</p>
+          <section class="panel">
+            <div class="panel-title"><span>% education</span><span class="window">— □</span></div>
+            <div class="panel-body">
+              <div class="item">
+                <h3>MSc Computer Science with Artificial Intelligence</h3>
+                <span class="meta">University of York / Final year</span>
+                <p><strong>Completed modules:</strong> Software Engineering, Advanced Programming, Applied AI, AI and Machine Learning, Algorithms and Data Structures, Computer Architecture and Operating Systems, Computer and Mobile Networking, Research Methods.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel pink">
+            <div class="panel-title"><span>% projects</span><span class="window">— □</span></div>
+            <div class="panel-body">
+              <div class="item">
+                <h3><span class="project-number">01</span> Social Media Moderation Analytics Dashboard</h3>
+                <p>Desktop analytics platform supporting social media moderation through data cleaning, reporting, statistical analysis and visualisation of user engagement and moderation activity.</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Pandas</span><span class="tag">SQLite</span><span class="tag">Matplotlib</span></div>
+              </div>
+
+              <div class="item">
+                <h3><span class="project-number">02</span> ML for Biodiversity Conservation</h3>
+                <p>Combined multiple UK biodiversity datasets and used a Genetic Algorithm for feature selection with Linear Regression to identify environmental variables associated with changes in wild bee populations.</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">Numpy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span></div>
+              </div>
+
+              <div class="item">
+                <h3><span class="project-number">03</span> Web Design and Development</h3>
+                <p>Website design and development for electronic musician MEALLA, combining responsive front-end implementation with a strong visual identity.</p>
+                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel lime">
+            <div class="panel-title"><span>% interests</span><span class="window">— □</span></div>
+            <div class="panel-body">
+              <ul>
+                <li>Software engineering for clear, maintainable and user-centred systems.</li>
+                <li>Cloud infrastructure, deployment pipelines, scalability and reliability.</li>
+                <li>AI systems that move beyond notebooks into robust real-world services.</li>
+              </ul>
+            </div>
+          </section>
         </section>
-
-        <section>
-          <h2>Skills</h2>
-          <p>HTML / CSS / JavaScript</p>
-          <p>Python / Pandas / NumPy</p>
-          <p>Java / React / GitHub</p>
-          <p>SQLite / Matplotlib</p>
-        </section>
-
-        <section>
-          <h2>Current</h2>
-          <p>Volunteer Mentor @ CodeClub</p>
-        </section>
-      </aside>
-
-      <section class="cv-main">
-        <h2>Projects</h2>
-
-        <article>
-          <h3>Social Media Moderation Analytics Dashboard</h3>
-          <p>
-            Desktop analytics platform supporting moderation through data cleaning,
-            reporting, statistical analysis and visualisation.
-          </p>
-          <p class="cv-tags">Python · Tkinter · Pandas · SQLite · Matplotlib</p>
-        </article>
-
-        <article>
-          <h3>Machine Learning for Biodiversity Conservation</h3>
-          <p>
-            Combined UK biodiversity datasets and used a Genetic Algorithm for feature
-            selection alongside Linear Regression to identify variables linked to wild bee populations.
-          </p>
-          <p class="cv-tags">Python · NumPy · Pandas · Scikit-learn</p>
-        </article>
-
-        <article>
-          <h3>Web Design and Development</h3>
-          <p>
-            Website design and development for electronic musician MEALLA.
-          </p>
-          <p class="cv-tags">HTML · CSS · JavaScript · Bootstrap</p>
-        </article>
-
-        <h2>Modules</h2>
-        <p>
-          Software Engineering, Advanced Programming, Applied AI, AI and Machine Learning,
-          Algorithms and Data Structures, Computer Architecture and Operating Systems,
-          Computer and Mobile Networking, Research Methods.
-        </p>
       </section>
     </div>
+
+    <footer class="footer-strip">
+      <a href="index.html">Start &gt;</a>
+      <span>CV</span>
+      <span>References upon request</span>
+    </footer>
   </main>
 </body>
 </html>
