@@ -1,399 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Georgina Melling | CV</title>
-  <style>
-    :root{
-      --bg:#14001f;
-      --pink:#ff3cac;
-      --cyan:#00f5ff;
-      --yellow:#fff000;
-      --lime:#52ff00;
-      --ink:#050008;
-      --paper:#fff6d6;
-      --white:#ffffff;
-      --soft:#f7f7f7;
-    }
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Georgina Melling | CV</title>
+      <link rel="stylesheet" href="cv-styles.css">
+    </head>
+    <body>
+      <main class="page" aria-label="Georgina Melling CV">
+        <div class="cv">
+          <header class="hero">
+            <div>
+              <p class="kicker">&gt; curriculum vitae...</p>
+              <h1>Georgina Melling</h1>
+              <p class="role">07599 370901 / georginamelling@outlook.com / g-melling@github.io</p>
+              <p class="intro">Final-year MSc Computer Science with Artificial Intelligence student at the University of York, interested in Software Engineering, Cloud Infrastructure and DevOps for deploying scalable, reliable AI systems.</p>
+            </div>
+            <!--
+            <address class="contact">
+              <a href="mailto:georginamelling@outlook.com">georginamelling@outlook.com</a><br>
+              <a href="https://github.com/g-melling">github.com/g-melling</a><br>
+              <a href="#">LinkedIn</a><br>
+              United Kingdom
+            </address>
+          -->
+          </header>
 
-    *{box-sizing:border-box;}
+          <section class="layout">
+            <aside>
+              <section class="panel lime">
+                <div class="panel-title"><span>% skills</span><span class="window">— □</span></div>
+                <div class="panel-body">
+                  <p><strong>Programming & Web</strong></p>
+                  <div class="tags">
+                    <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">React</span><span class="tag">C</span>
+                  </div>
+                  <p style="margin-top:9px"><strong>Data & AI</strong></p>
+                  <div class="tags">
+                    <span class="tag">Numpy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">SQLite</span>
+                  </div>
+                  <p style="margin-top:9px"><strong>Tools & Practice</strong></p>
+                  <div class="tags">
+                    <span class="tag">GitHub</span><span class="tag">Tkinter</span><span class="tag">Bootstrap</span><span class="tag">DevOps</span><span class="tag">Cloud</span>
+                  </div>
+                </div>
+              </section>
 
-    html{scroll-behavior:smooth;}
+              <section class="panel pink">
+                <div class="panel-title"><span>% certifications</span><span class="window">— □</span></div>
+                <div class="panel-body">
+                  <p><strong>EDx / Harvard CS50X:</strong> Introduction to Computer Science</p>
+                  <p><strong>EDx / Harvard CS50P:</strong> Introduction to Python</p>
+                  <p><strong>EDx / Harvard CS50AI:</strong> Introduction to AI</p>
+                </div>
+              </section>
 
-    body{
-      margin:0;
-      background:var(--soft);
-      color:var(--ink);
-      font-family:"Courier New", Courier, monospace;
-      line-height:1.35;
-    }
+              <section class="panel">
+                <div class="panel-title"><span>% interests</span><span class="window">— □</span></div>
+                <div class="panel-body">
+                  <ul>
+                    <li>Creating projects with Raspberry Pi. I am also learning some basic electronics and robotics.</li>
+                    <li>I originally trained as classical pianist, but now I enjoy writing and playing electronic music. My current build is a Pi-powered Theremin.</li>
+                    <li>Anything outdoorsy - I enjoy climbing, mountaineering, kayaking, hiking. I am designing a solar-powered cyberdeck for off grid adventures.</li>
+                  </ul>
+                </div>
+              </section>
 
-    .toolbar{
-      max-width:210mm;
-      margin:18px auto 10px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      padding:0 10px;
-      font-size:0.9rem;
-    }
+            </aside>
 
-    .toolbar a,
-    .print-btn{
-      color:var(--ink);
-      background:var(--yellow);
-      border:3px solid var(--ink);
-      box-shadow:4px 4px 0 var(--cyan);
-      text-decoration:none;
-      padding:8px 11px;
-      font-family:inherit;
-      font-weight:bold;
-      cursor:pointer;
-    }
+            <section>
+              <section class="panel">
+                <div class="panel-title"><span>% education</span><span class="window">— □</span></div>
+                <div class="panel-body">
+                  <div class="item">
+                    <h3>MSc Computer Science with Artificial Intelligence</h3>
+                    <span class="meta">University of York / estimated graduation date: May 2027</span>
+                    <p><strong>Completed modules:</strong> Software Engineering, Advanced Programming, Applied AI, AI and Machine Learning, Algorithms and Data Structures, Computer Architecture and Operating Systems, Computer and Mobile Networking, Research Methods.</p>
+                  </div>
+                  <div class="item">
+                    <h3>BMus Music</h3>
+                    <span class="meta">Royal Holloway, University of London / 2:1</span>
+                  </div>
+                </div>
+              </section>
 
-    .page{
-      width:100%;
-      min-height:100vh;
-      margin:0;
-      background:var(--white);
-      border:4px solid var(--ink);
-      box-shadow:12px 12px 0 var(--pink);
-      position:relative;
-      overflow:hidden;
-      box-sizing: border-box;
-    }
+              <section class="panel pink">
+                <div class="panel-title"><span>% current</span><span class="window">— □</span></div>
+                <div class="panel-body">
+                  <p><strong>CodeClub: </strong>Volunteer Mentor / June 2026 - Present</p>
+                  <p>Supporting young learners with coding concepts, creative problem solving and confidence in technology.</p>
+                  <p><strong>Buckinghamshire Music Trust: </strong>Instrumental Teacher / March 2024 - Present</p>
+                </div>
+              </section>
 
-    .page:before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:
-        linear-gradient(#05000808 1px, transparent 1px),
-        linear-gradient(90deg,#05000808 1px, transparent 1px);
-      background-size:24px 24px;
-      opacity:.45;
-    }
+              <section class="panel lime">
+                <div class="panel-title"><span>% projects</span><span class="window">— □</span></div>
+                <div class="panel-body">
+                  <div class="item">
+                    <h3><span class="project-number">01</span> Social Media Moderation Analytics Dashboard</h3>
+                    <p>Desktop analytics platform supporting social media moderation through data cleaning, reporting, statistical analysis and visualisation of user engagement and moderation activity.</p>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Pandas</span><span class="tag">SQLite</span><span class="tag">Matplotlib</span></div>
+                  </div>
 
-    .cv{
-      position:relative;
-      z-index:1;
-      padding:15mm 16mm 13mm;
-    }
+                  <div class="item">
+                    <h3><span class="project-number">02</span> ML for Biodiversity Conservation</h3>
+                    <p>Combined multiple UK biodiversity datasets and used a Genetic Algorithm for feature selection with Linear Regression to identify environmental variables associated with changes in wild bee populations.</p>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Numpy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span></div>
+                  </div>
 
-    .hero{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:18px;
-      align-items:end;
-      padding:12mm;
-      background:var(--yellow);
-      border:4px solid var(--ink);
-      box-shadow:8px 8px 0 var(--cyan);
-      margin-bottom:10mm;
-    }
+                  <div class="item">
+                    <h3><span class="project-number">03</span> Web Design and Development</h3>
+                    <p>Website design and development for electronic musician MEALLA, combining responsive front-end implementation with a strong visual identity.</p>
+                    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span></div>
+                  </div>
+                </div>
+              </section>
 
-    .kicker{
-      margin:0 0 4px;
-      font-size:12pt;
-      font-weight:bold;
-      letter-spacing:.02em;
-    }
-
-    h1{
-      margin:0;
-      font-size:64pt;
-      line-height:.9;
-      letter-spacing:-.05em;
-      text-transform:uppercase;
-      color:var(--ink);
-      text-shadow:3px 3px 0 var(--pink), 6px 6px 0 var(--cyan);
-    }
-
-    .role{
-      margin:7px 0 0;
-      font-size:18pt;
-      font-weight:bold;
-    }
-
-    .intro{
-      margin:7px 0 0;
-      font-size:14pt;
-    }
-
-    .contact{
-      text-align:right;
-      font-size:8.6pt;
-      font-weight:bold;
-      line-height:1.6;
-    }
-
-    .contact a{color:var(--ink); text-decoration-thickness:2px; text-decoration-color:var(--pink);}
-
-    .layout{
-      display:grid;
-      grid-template-columns:1fr 2fr;
-      gap:9mm;
-      align-items: stretch;
-    }
-
-    aside{
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    aside .panel:last-child{
-      flex: 1;
-    }
-
-    .panel{
-      background:var(--white);
-      border:3px solid var(--ink);
-      box-shadow:6px 6px 0 var(--cyan);
-      margin-bottom:7mm;
-      break-inside:avoid;
-    }
-
-    .panel.pink{box-shadow:6px 6px 0 var(--pink);}
-    .panel.lime{box-shadow:6px 6px 0 var(--lime);}
-
-    .panel-title{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      background:var(--paper);
-      border-bottom:3px solid var(--ink);
-      padding:5px 8px;
-      font-size:18pt;
-      line-height:1;
-      font-weight:900;
-      letter-spacing:-.05em;
-      text-transform:lowercase;
-    }
-
-    .panel-title .window{
-      font-size:13pt;
-      letter-spacing:0;
-      white-space:nowrap;
-    }
-
-    .panel-body{padding:8px 10px; font-size:13pt;}
-    .panel-body p{margin:0 0 7px;}
-
-    h2,h3{margin:0;}
-    h3{font-size:15pt; line-height:1.25;}
-
-    .meta{
-      display:block;
-      color:var(--pink);
-      font-weight:bold;
-      font-style:italic;
-      margin:1px 0 5px;
-    }
-
-    .item{margin-bottom:8px; break-inside:avoid;}
-    .item:last-child{margin-bottom:0;}
-
-    ul{
-      margin:4px 0 0 0;
-      padding:0;
-      list-style:none;
-    }
-
-    li{margin:1px 0;}
-    li:before{content:"- "; font-weight:bold;}
-
-    .tags{display:flex; flex-wrap:wrap; gap:4px;}
-    .tag{
-      display:inline-block;
-      background:var(--lime);
-      color:var(--ink);
-      padding:3px 6px;
-      border:2px solid var(--ink);
-      font-size:7.8pt;
-      font-weight:bold;
-      line-height:1;
-    }
-
-    .project-number{color:var(--pink); font-weight:bold;}
-
-    .footer-strip{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      display:grid;
-      grid-template-columns:2fr 1fr 2fr;
-      gap:8px;
-      padding:8px 16mm;
-      background:var(--yellow);
-      border-top:4px solid var(--ink);
-      font-size:8.7pt;
-      font-weight:bold;
-      z-index:2;
-    }
-
-    .footer-strip span,
-    .footer-strip a{
-      border:3px solid var(--ink);
-      background:var(--paper);
-      color:var(--ink);
-      padding:5px 8px;
-      text-align:center;
-      text-decoration:none;
-    }
-
-    .footer-strip .download{
-      background:var(--cyan);
-    }
-
-    @media print{
-      body{background:white;}
-      .toolbar{display:none;}
-      .page{
-        margin:0;
-        width:210mm;
-        min-height:297mm;
-        border:0;
-        box-shadow:none;
-      }
-      @page{size:A4; margin:0;}
-    }
-
-    @media (max-width:760px){
-      .page{width:100%; min-height:auto; border-left:0; border-right:0;}
-      .cv{padding:20px;}
-      .hero{grid-template-columns:1fr; padding:18px;}
-      .contact{text-align:left;}
-      .layout{grid-template-columns:1fr;}
-      .footer-strip{position:static; grid-template-columns:1fr; padding:10px 20px;}
-    }
-  </style>
-</head>
-<body>
-
-  <main class="page" aria-label="Georgina Melling CV">
-    <div class="cv">
-      <header class="hero">
-        <div>
-          <p class="kicker">&gt; curriculum vitae...</p>
-          <h1>Georgina Melling</h1>
-          <p class="role">07599 370901 / georginamelling@outlook.com / g-melling@github.io</p>
-          <p class="intro">Final-year MSc Computer Science with Artificial Intelligence student at the University of York, interested in Software Engineering, Cloud Infrastructure and DevOps for deploying scalable, reliable AI systems.</p>
+            </section>
+          </section>
         </div>
-        <!--
-        <address class="contact">
-          <a href="mailto:georginamelling@outlook.com">georginamelling@outlook.com</a><br>
-          <a href="https://github.com/g-melling">github.com/g-melling</a><br>
-          <a href="#">LinkedIn</a><br>
-          United Kingdom
-        </address>
-      -->
-      </header>
 
-      <section class="layout">
-        <aside>
-          <section class="panel lime">
-            <div class="panel-title"><span>% skills</span><span class="window">— □</span></div>
-            <div class="panel-body">
-              <p><strong>Programming & Web</strong></p>
-              <div class="tags">
-                <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">React</span><span class="tag">C</span>
-              </div>
-              <p style="margin-top:9px"><strong>Data & AI</strong></p>
-              <div class="tags">
-                <span class="tag">Numpy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">SQLite</span>
-              </div>
-              <p style="margin-top:9px"><strong>Tools & Practice</strong></p>
-              <div class="tags">
-                <span class="tag">GitHub</span><span class="tag">Tkinter</span><span class="tag">Bootstrap</span><span class="tag">DevOps</span><span class="tag">Cloud</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="panel pink">
-            <div class="panel-title"><span>% certifications</span><span class="window">— □</span></div>
-            <div class="panel-body">
-              <p><strong>EDx / Harvard CS50X:</strong> Introduction to Computer Science</p>
-              <p><strong>EDx / Harvard CS50P:</strong> Introduction to Python</p>
-              <p><strong>EDx / Harvard CS50AI:</strong> Introduction to AI</p>
-            </div>
-          </section>
-
-          <section class="panel">
-            <div class="panel-title"><span>% interests</span><span class="window">— □</span></div>
-            <div class="panel-body">
-              <ul>
-                <li>Creating projects with Raspberry Pi. I am also learning some basic electronics and robotics.</li>
-                <li>I originally trained as classical pianist, but now I enjoy writing and playing electronic music. My current build is a Pi-powered Theremin.</li>
-                <li>Anything outdoorsy - I enjoy climbing, mountaineering, kayaking, hiking. I am designing a solar-powered cyberdeck for off grid adventures.</li>
-              </ul>
-            </div>
-          </section>
-
-        </aside>
-
-        <section>
-          <section class="panel">
-            <div class="panel-title"><span>% education</span><span class="window">— □</span></div>
-            <div class="panel-body">
-              <div class="item">
-                <h3>MSc Computer Science with Artificial Intelligence</h3>
-                <span class="meta">University of York / estimated graduation date: May 2027</span>
-                <p><strong>Completed modules:</strong> Software Engineering, Advanced Programming, Applied AI, AI and Machine Learning, Algorithms and Data Structures, Computer Architecture and Operating Systems, Computer and Mobile Networking, Research Methods.</p>
-              </div>
-              <div class="item">
-                <h3>BMus Music</h3>
-                <span class="meta">Royal Holloway, University of London / 2:1</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="panel pink">
-            <div class="panel-title"><span>% current</span><span class="window">— □</span></div>
-            <div class="panel-body">
-              <p><strong>CodeClub: </strong>Volunteer Mentor / June 2026 - Present</p>
-              <p>Supporting young learners with coding concepts, creative problem solving and confidence in technology.</p>
-              <p><strong>Buckinghamshire Music Trust: </strong>Instrumental Teacher / March 2024 - Present</p>
-            </div>
-          </section>
-
-          <section class="panel lime">
-            <div class="panel-title"><span>% projects</span><span class="window">— □</span></div>
-            <div class="panel-body">
-              <div class="item">
-                <h3><span class="project-number">01</span> Social Media Moderation Analytics Dashboard</h3>
-                <p>Desktop analytics platform supporting social media moderation through data cleaning, reporting, statistical analysis and visualisation of user engagement and moderation activity.</p>
-                <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Pandas</span><span class="tag">SQLite</span><span class="tag">Matplotlib</span></div>
-              </div>
-
-              <div class="item">
-                <h3><span class="project-number">02</span> ML for Biodiversity Conservation</h3>
-                <p>Combined multiple UK biodiversity datasets and used a Genetic Algorithm for feature selection with Linear Regression to identify environmental variables associated with changes in wild bee populations.</p>
-                <div class="tags"><span class="tag">Python</span><span class="tag">Numpy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span></div>
-              </div>
-
-              <div class="item">
-                <h3><span class="project-number">03</span> Web Design and Development</h3>
-                <p>Website design and development for electronic musician MEALLA, combining responsive front-end implementation with a strong visual identity.</p>
-                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span></div>
-              </div>
-            </div>
-          </section>
-
-        </section>
-      </section>
-    </div>
-
-    <footer class="footer-strip">
-      <a href="index.html">View Portfolio &gt;</a>
-      <a href="#" class="download">...Download CV...</a>
-      <span>References available upon request</span>
-    </footer>
-  </main>
-</body>
+        <footer class="footer-strip">
+          <a href="index.html">View Portfolio &gt;</a>
+          <a href="#" class="download">...Download CV...</a>
+          <span>References available upon request</span>
+        </footer>
+      </main>
+    </body>
 </html>
