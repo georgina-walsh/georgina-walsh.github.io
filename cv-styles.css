@@ -198,7 +198,9 @@ ul{
     list-style:none;
 }
 
-li{margin:1px 0;}
+li{
+    margin:12px;
+}
 li:before{content:"- "; font-weight:bold;}
 
 .tags{display:flex; flex-wrap:wrap; gap:4px;}
@@ -221,7 +223,7 @@ li:before{content:"- "; font-weight:bold;}
     right:0;
     bottom:0;
     display:grid;
-    grid-template-columns:2fr 1fr 2fr;
+    grid-template-columns:1fr 1fr 1fr 1fr;
     gap:8px;
     padding:8px 16mm;
     background:var(--yellow);
